@@ -1,9 +1,9 @@
-name: Visit Website Every 15 Minutes
+name: Visit Website Every 13 Minutes
 
 on:
   schedule:
     # Run the job every 15 minutes
-    - cron: "*/15 * * * *"
+    - cron: "*/13 * * * *"
   workflow_dispatch: # Allows for manual triggering of the workflow
 
 jobs:
