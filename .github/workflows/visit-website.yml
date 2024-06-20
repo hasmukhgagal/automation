@@ -1,0 +1,26 @@
+name: Visit Website Every 15 Minutes
+
+on:
+  schedule:
+    # Run the job every 15 minutes
+    - cron: "*/15 * * * *"
+  workflow_dispatch: # Allows for manual triggering of the workflow
+
+jobs:
+  visit-website:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Visit the website
+        run: node visitWebsite.js
